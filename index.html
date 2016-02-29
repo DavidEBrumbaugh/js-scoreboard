@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Round Menu Test</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <script src="js/jquery.lettering.js"></script>
+    <script src="js/jquery.fittext.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/circletype.js"></script>
+    <script src="js/scoreboard.js"></script>
+    <link href="round-menu.css" type="text/css" rel="stylesheet">
+    <link href="fonts/score/stylesheet.css" type="text/css" rel="stylesheet">
+    <link href="fonts/impact/stylesheet.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<html>
+<div class="menu-launch-button-back">
+    <div class="menu-launch-button-front">
+        <div class="menu-launch-text"> Test </div>
+    </div>
+</div>
+
+
+<div id="thescoreboard">
+    <div id="card"   class="flip-container vertical" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper" >
+            <div class="front" >
+                <!-- front content -->
+                A
+            </div>
+            <div class="back" >
+                <!-- back content -->
+                B
+            </div>
+        </div>
+    </div>
+    <div id="card2"  class="flip-container vertical" ontouchstart="this.classList.toggle('hover');">
+        <div class="flipper" >
+            <div class="front" >
+                <!-- front content -->
+                A
+            </div>
+            <div class="back" >
+                <!-- back content -->
+                B
+            </div>
+        </div>
+    </div>
+</div>
+<button type="button" onclick="sb.flipTo('A');" >A</button>
+<button type="button" onclick="sb.flipTo('C');" >C</button>
+<button type="button" onclick="sb.flipTo('M');" >M</button>
+<button type="button" onclick="sb.flipTo('Z');" >Z</button>
+<hr/>
+<button type="button" onclick="sb2.flipTo('A');" >A</button>
+<button type="button" onclick="sb2.flipTo('C');" >C</button>
+<button type="button" onclick="sb2.flipTo('M');" >M</button>
+<button type="button" onclick="sb2.flipTo('Z');" >Z</button>
+<hr/>
+
+<div class="control-panel">
+<div id="thescoreboard2" class="scoreboard-frame"></div>
+<div class="door-bell-button" onclick="board.changeMessageTo('Hi+There');"><div class="door-bell-button-text">Hello World</div></div>
+<div class="door-bell-button" onclick="board.changeMessageTo('The+Quick+Brown+Fox');"><div class="door-bell-button-text">Brown Fox</div></div>
+   <div class="door-bell-button" onclick="board.countDown('Countdown:','01:01','Now+What?');"><div class="door-bell-button-text">Set Timer</div></div>
+    <div class="door-bell-button" onclick="board.toggleCountDown();"><div class="door-bell-button-text">Start/Stop</div></div>
+</div>
+<hr/>
+<button type="button" onclick="board.changeMessageTo('The+Quick+Brown+Fox')">The Quick Brown Fox</button>
+<button type="button" onclick="board.changeMessageTo('Jumped+Over+the+Lazy+Dog')">Jumped Over the Lazy Dog</button>
+<button type="button" onclick="board.changeMessageTo('This+is+Another+Fine+Mess')">This is Another FIne Mess</button>
+<button type="button" onclick="board.changeMessageTo('Bridge+Out+!+?')">Bridge Out ! ?</button>
+<script>
+
+
+    sb = new ScoreBoardCell('#card');
+    sb2 = new ScoreBoardCell('#card2')
+    board = new ScoreBoard('thescoreboard2',15,'Hi+There');
+</script>
+</html>
+</body>
